@@ -107,6 +107,7 @@ body {
 }
 
 .darkLightModeBtn {
+    display: flex;
     position: absolute;
     top: 0;
     right: 0;
@@ -116,8 +117,9 @@ body {
     border: solid 3px white;
     background-color: black;
     cursor: pointer;
-}
-
+    justify-content: center;
+    align-items: center;
+}   
 #darkLightModeImg {
     width: 100%;
     height: 100%;

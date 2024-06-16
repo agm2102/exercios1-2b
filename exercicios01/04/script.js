@@ -81,12 +81,14 @@ darkLightModeBtn.addEventListener('click', () => {
 
     if (darkLightModeImg.getAttribute('src') == 'images/light_mode_48dp.png') {
         darkLightModeImg.setAttribute('src', 'images/dark_mode_48dp.png');
+        darkLightModeBtn.setAttribute('title', 'Modo Escuro')
         document.body.style.backgroundImage = "url('images/pexels-francesco-ungaro-1525041.jpg')"
         container.style.color = "greenyellow"
         isDarkMode = false;
     }
     else {
         darkLightModeImg.setAttribute('src', 'images/light_mode_48dp.png');
+        darkLightModeBtn.setAttribute('title', 'Modo Claro')
         document.body.style.backgroundImage = "url('images/pexels-eberhardgross-1421903.jpg')"
         container.style.color = "rgb(47, 172, 255)"
         isDarkMode = true;
