@@ -9,6 +9,7 @@ let btCalcular = document.querySelector("#btCalcular");
 let darkLightModeBtn = document.querySelector(".darkLightModeBtn");
 let darkLightModeImg = document.getElementById("darkLightModeImg");
 let container = document.getElementById("container");
+let isDarkMode = false;
 
 function mediaAritmetica() {
     let res = (Number(valor1.value) + Number(valor2.value) + Number(valor3.value)) / 3;
@@ -50,6 +51,22 @@ btCalcular.addEventListener('click', () => {
         mediaDasMedia();
     }
 })
+btCalcular.addEventListener('mouseover', () => {
+
+    if (!isDarkMode) {
+        btCalcular = document.getElementById("btCalcular").style.boxShadow = "4px 3px 11px 1px greenyellow"
+        btCalcular = document.getElementById("btCalcular").style.color = "greenyellow"
+    }
+    else {
+        btCalcular = document.getElementById("btCalcular").style.boxShadow = "4px 3px 11px 1px rgb(47, 172, 255)"
+        btCalcular = document.getElementById("btCalcular").style.color = "rgb(47, 172, 255)"
+    }
+
+})
+btCalcular.addEventListener('mouseout', () => {
+    btCalcular = document.getElementById("btCalcular").style.boxShadow = "3px 2px 10px 4px black"
+    btCalcular = document.getElementById("btCalcular").style.color = "aliceblue"
+})
 document.addEventListener('keydown', (evento) => {
 
     const keyName = evento.key;
@@ -66,10 +83,12 @@ darkLightModeBtn.addEventListener('click', () => {
         darkLightModeImg.setAttribute('src', 'images/dark_mode_48dp.png');
         document.body.style.backgroundImage = "url('images/pexels-francesco-ungaro-1525041.jpg')"
         container.style.color = "greenyellow"
+        isDarkMode = false;
     }
     else {
         darkLightModeImg.setAttribute('src', 'images/light_mode_48dp.png');
         document.body.style.backgroundImage = "url('images/pexels-eberhardgross-1421903.jpg')"
         container.style.color = "rgb(47, 172, 255)"
+        isDarkMode = true;
     }
 })
